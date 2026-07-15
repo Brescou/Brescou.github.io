@@ -2,7 +2,7 @@
   {
     "index": "01",
     "name": "langgraph-agent-stack",
-    "description": "Production-ready multi-agent LangGraph template for Kubernetes. Helm charts, observability, CI/CD — 250+ tests.",
+    "description": "Production-grade multi-agent LangGraph template for Kubernetes. Helm/KEDA, cost caps, pack canaries, CI — 800+ tests.",
     "stack": "LangGraph · Kubernetes · Helm · Python",
     "url": "https://github.com/Brescou/langgraph-agent-stack",
     "status": "open source"
