@@ -1,0 +1,220 @@
+---
+import Base from '../layouts/Base.astro';
+import projects from '../data/projects.json';
+---
+
+<Base title="Brescou — ML/MLOps Engineer">
+  <!-- HERO : identité déclarée comme un manifest -->
+  <section class="hero">
+    <h1>
+      Agentic systems,<br />
+      <span class="accent">shipped to production.</span>
+    </h1>
+
+    <div class="manifest" aria-label="Profile summary">
+      <div class="row"><span class="key">role:</span><span class="val">ML/MLOps Engineer</span></div>
+      <div class="row"><span class="key">org:</span><span class="val">SBI — AI consulting</span></div>
+      <div class="row"><span class="key">focus:</span><span class="val">[LangGraph, Kubernetes, LLM infrastructure]</span></div>
+      <div class="row"><span class="key">clients:</span><span class="val">[LVMH, Air Canada, Petal]</span></div>
+      <div class="row"><span class="key">location:</span><span class="val">Montréal, CA</span></div>
+    </div>
+
+    <p class="intro">
+      I take multi-agent LLM systems from proof-of-concept to production —
+      deployment, autoscaling, secrets management, observability. The unglamorous
+      90% that makes the demo actually work at scale.
+    </p>
+  </section>
+
+  <!-- WORK : liste type tracklist -->
+  <section id="work">
+    <h2 class="label">Selected work</h2>
+    <ul class="tracklist">
+      {
+        projects.map((p) => (
+          <li>
+            {p.url ? (
+              <a href={p.url} class="track">
+                <span class="idx mono">{p.index}</span>
+                <span class="body">
+                  <span class="name">{p.name}</span>
+                  <span class="desc">{p.description}</span>
+                </span>
+                <span class="meta mono">
+                  {p.stack}
+                  <span class="status" data-status={p.status}>{p.status}</span>
+                </span>
+              </a>
+            ) : (
+              <div class="track static">
+                <span class="idx mono">{p.index}</span>
+                <span class="body">
+                  <span class="name">{p.name}</span>
+                  <span class="desc">{p.description}</span>
+                </span>
+                <span class="meta mono">
+                  {p.stack}
+                  <span class="status" data-status={p.status}>{p.status}</span>
+                </span>
+              </div>
+            )}
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <h2 class="label">Background</h2>
+    <p>
+      M.Sc. from UQAM. I've spent the last years building and operating LLM
+      infrastructure for enterprise clients — LangGraph state machines,
+      Helm-based autoscaling, Vault secrets, CI/CD pipelines, Snowflake data
+      platforms. I care about the gap between "it works in the notebook" and
+      "it survives production traffic."
+    </p>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2 class="label">Contact</h2>
+    <p>
+      Open to consulting engagements on agentic AI and ML infrastructure.<br />
+      <a href="https://github.com/Brescou">github.com/Brescou</a>
+    </p>
+  </section>
+</Base>
+
+<style>
+  .hero {
+    padding: 4.5rem 0 4rem;
+  }
+
+  h1 {
+    font-size: clamp(2.2rem, 6vw, 3.4rem);
+    margin-bottom: 2.25rem;
+  }
+
+  .accent {
+    color: var(--accent);
+  }
+
+  /* Signature : le manifest */
+  .manifest {
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    line-height: 1.9;
+    border-left: 2px solid var(--line);
+    padding-left: 1.25rem;
+    margin-bottom: 2.25rem;
+  }
+
+  .manifest .key {
+    color: var(--accent-dim);
+    display: inline-block;
+    width: 6.5rem;
+  }
+
+  .manifest .val {
+    color: var(--muted);
+  }
+
+  .intro {
+    max-width: 36rem;
+    color: var(--muted);
+  }
+
+  section {
+    padding: 2.5rem 0;
+  }
+
+  section h2 {
+    margin-bottom: 1.75rem;
+  }
+
+  /* Tracklist */
+  .tracklist {
+    list-style: none;
+  }
+
+  .tracklist li + li {
+    border-top: 1px solid var(--line);
+  }
+
+  .track {
+    display: grid;
+    grid-template-columns: 2.5rem 1fr auto;
+    gap: 1.25rem;
+    align-items: baseline;
+    padding: 1.35rem 0;
+    color: inherit;
+    border-bottom: none;
+  }
+
+  a.track:hover .name,
+  a.track:focus-visible .name {
+    color: var(--accent);
+  }
+
+  .idx {
+    color: var(--accent-dim);
+    font-size: 0.78rem;
+  }
+
+  .body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .name {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.05rem;
+    transition: color 120ms ease;
+  }
+
+  .desc {
+    color: var(--muted);
+    font-size: 0.9rem;
+    max-width: 30rem;
+  }
+
+  .meta {
+    font-size: 0.7rem;
+    color: var(--muted);
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    align-items: flex-end;
+  }
+
+  .status {
+    color: var(--accent-dim);
+  }
+
+  .status[data-status='open source'] {
+    color: var(--accent);
+  }
+
+  #about p,
+  #contact p {
+    color: var(--muted);
+    max-width: 36rem;
+  }
+
+  @media (max-width: 560px) {
+    .track {
+      grid-template-columns: 2rem 1fr;
+    }
+    .meta {
+      grid-column: 2;
+      text-align: left;
+      align-items: flex-start;
+      flex-direction: row;
+      gap: 1rem;
+    }
+  }
+</style>

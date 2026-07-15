@@ -1,0 +1,108 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const {
+  title,
+  description = 'ML/MLOps Engineer — agentic systems in production. LangGraph, Kubernetes, Terraform.',
+} = Astro.props;
+
+// Passe SHOW_BLOG à true quand le premier article est publié.
+const SHOW_BLOG = false;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="color-scheme" content="dark" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <nav aria-label="Main">
+        <a href="/" class="brand mono">brescou</a>
+        <div class="links">
+          <a href="/#work">Work</a>
+          {SHOW_BLOG && <a href="/blog">Writing</a>}
+          <a href="/#contact">Contact</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer>
+      <span class="label">Montréal · {new Date().getFullYear()}</span>
+      <span class="label">
+        <a href="https://github.com/Brescou">GitHub</a> ·
+        <a href="https://www.linkedin.com/">LinkedIn</a>
+      </span>
+    </footer>
+  </body>
+</html>
+
+<style>
+  header {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 1.75rem var(--pad);
+    width: 100%;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  .brand {
+    color: var(--text);
+    font-weight: 500;
+    letter-spacing: 0.02em;
+  }
+
+  .links {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  .links a {
+    color: var(--muted);
+  }
+
+  .links a:hover {
+    color: var(--text);
+  }
+
+  footer {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 2.5rem var(--pad);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid var(--line);
+    margin-top: 5rem;
+  }
+
+  footer a {
+    color: var(--muted);
+  }
+</style>

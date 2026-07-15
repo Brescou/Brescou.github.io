@@ -1,0 +1,29 @@
+[
+  {
+    "index": "01",
+    "name": "langgraph-agent-stack",
+    "description": "Production-ready multi-agent LangGraph template for Kubernetes. Helm charts, observability, CI/CD — 250+ tests.",
+    "stack": "LangGraph · Kubernetes · Helm · Python",
+    "year": "2026",
+    "url": "https://github.com/Brescou/langgraph-agent-stack",
+    "status": "open source"
+  },
+  {
+    "index": "02",
+    "name": "APEX-7",
+    "description": "Multi-agent LLM trading dashboard. Backtesting engine, Devil's Advocate agent, Bloomberg-style terminal UI.",
+    "stack": "LangGraph · FastAPI · React · WebSockets",
+    "year": "2026",
+    "url": "https://github.com/Brescou/APEX-7",
+    "status": "wip"
+  },
+  {
+    "index": "03",
+    "name": "Nyxen",
+    "description": "Personal finance mobile app. Bank aggregation via Plaid, spending insights.",
+    "stack": "FastAPI · Flutter · PostgreSQL · Plaid",
+    "year": "2026",
+    "url": null,
+    "status": "private"
+  }
+]
