@@ -4,7 +4,6 @@
     "name": "langgraph-agent-stack",
     "description": "Production-ready multi-agent LangGraph template for Kubernetes. Helm charts, observability, CI/CD — 250+ tests.",
     "stack": "LangGraph · Kubernetes · Helm · Python",
-    "year": "2026",
     "url": "https://github.com/Brescou/langgraph-agent-stack",
     "status": "open source"
   }

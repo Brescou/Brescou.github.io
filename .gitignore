@@ -19,7 +19,3 @@ pnpm-debug.log*
 
 # macOS
 .DS_Store
-
-# local agent docs
-CLAUDE.md
-AGENTS.md

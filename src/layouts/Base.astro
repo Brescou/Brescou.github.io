@@ -10,9 +10,6 @@ const {
   title,
   description = 'ML / MLOps Engineer with an M.Sc. in data science and 5+ years of experience. Focused on industrializing agentic systems (LangGraph) in production on Kubernetes, and shipping data/ML apps on GCP, Azure and AWS.',
 } = Astro.props;
-
-// Passe SHOW_BLOG à true quand le premier article est publié.
-const SHOW_BLOG = false;
 ---
 
 <!doctype html>
@@ -37,7 +34,6 @@ const SHOW_BLOG = false;
         <a href="/" class="brand mono">brescou</a>
         <div class="links">
           <a href="/#work">Work</a>
-          {SHOW_BLOG && <a href="/blog">Writing</a>}
           <a href="/#contact">Contact</a>
         </div>
       </nav>
@@ -51,7 +47,7 @@ const SHOW_BLOG = false;
       <span class="label">Montréal · {new Date().getFullYear()}</span>
       <span class="label">
         <a href="https://github.com/Brescou">GitHub</a> ·
-        <a href="https://www.linkedin.com/">LinkedIn</a>
+        <a href="https://www.linkedin.com/in/thomas-rivemale-618a51b3">LinkedIn</a>
       </span>
     </footer>
   </body>
