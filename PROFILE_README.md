@@ -1,17 +1,19 @@
 # Brescou
 
-**ML/MLOps Engineer** — agentic systems in production.
+**ML / MLOps Engineer** — M.Sc. in data science, 5+ years in software, data and ML engineering.
 
-I take multi-agent LLM systems from proof-of-concept to production: deployment,
-autoscaling, secrets management, observability. Currently consulting at **SBI**
-(clients incl. LVMH, Air Canada, Petal).
+Currently focused on industrializing agentic systems (LangGraph) in production on
+Kubernetes, and more broadly on bringing data/ML applications to production
+(Python, Terraform, Docker, CI/CD) on GCP, Azure and AWS.
+
+Target: ML Engineer / MLOps roles with a strong focus on LLM systems in production.
 
 ```yaml
 focus:    [LangGraph, LLM infrastructure, MLOps]
-platform: [Kubernetes, Helm, Terraform, Vault]
-data:     [Snowflake, PostgreSQL, dbt]
+platform: [Kubernetes, Helm, Terraform, Docker]
 lang:     [Python, SQL, TypeScript]
 cloud:    [AWS, Azure, GCP]
+ci_cd:    [GitHub Actions, Terraform]
 ```
 
 ### Selected work
@@ -19,9 +21,6 @@ cloud:    [AWS, Azure, GCP]
 - **[langgraph-agent-stack](https://github.com/Brescou/langgraph-agent-stack)** —
   production-ready multi-agent LangGraph template for Kubernetes. Helm,
   observability, CI/CD. 250+ tests.
-- **APEX-7** — multi-agent LLM trading dashboard. Backtesting engine,
-  adversarial "Devil's Advocate" agent, terminal-style UI.
-- **Nyxen** *(private)* — personal finance app. FastAPI, Flutter, Plaid.
 
 ### Elsewhere
 
@@ -30,8 +29,7 @@ cloud:    [AWS, Azure, GCP]
 <!--
 Notes :
 - Pas de badges shields.io ni de github-readme-stats pour l'instant :
-  ajoute-les quand ton historique de commits publics sera plus dense
-  (le calendrier va se remplir rétroactivement quand APEX-7 passera public).
+  ajoute-les quand ton historique de commits publics sera plus dense.
 - Le bloc yaml = signature cohérente avec ton site portfolio.
 - Mets tes vrais liens LinkedIn/Kaggle.
 -->
